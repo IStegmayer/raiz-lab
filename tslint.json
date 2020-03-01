@@ -1,0 +1,18 @@
+{
+  "extends": ["tslint-config-airbnb", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+      "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+      "function-name": [true, { 
+          "method-regex": "^[a-z][\\w\\d]+$",
+          "private-method-regex": "^[a-z][\\w\\d]+$",
+          "protected-method-regex": "^[a-z][\\w\\d]+$",
+          "static-method-regex": "^[a-z][\\w\\d]+$",
+          "function-regex": "."
+      }],
+      "jsx-boolean-value": ["never"],
+      "import-name": [true, {
+          "react-emotion": "styled"
+      }],
+      "prefer-array-literal": false
+  }
+}

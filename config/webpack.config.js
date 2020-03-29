@@ -2,13 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './app/index.tsx',
+  entry: './app/index.jsx',
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -37,9 +37,13 @@ module.exports = {
       }
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.html',
+      favicon: 'app/assets/favicon.svg'
     }),
   ],
 };
